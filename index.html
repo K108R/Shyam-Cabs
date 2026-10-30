@@ -1,0 +1,368 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#fbf7ee">
+  <meta name="description" content="Plan airport transfers, local car rental and full-day ceramic sourcing travel in Morbi with Shyam Cabs. Call or WhatsApp to discuss your trip and fare.">
+  <title>Shyam Cabs | Morbi Ceramic Sourcing Travel</title>
+  <style>
+    :root {
+      --paper: #fbf7ee;
+      --white: #ffffff;
+      --ink: #191b19;
+      --muted: #606861;
+      --line: #e8e1d5;
+      --accent: #f0c76e;
+      --accent-deep: #d6a846;
+      --green: #168454;
+      --green-dark: #116b43;
+      --dark: #202822;
+      --radius: 22px;
+      --shadow: 0 18px 48px rgba(33, 39, 33, .10);
+    }
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; scroll-padding-top: 90px; }
+    body {
+      margin: 0;
+      background: var(--paper);
+      color: var(--ink);
+      font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      line-height: 1.55;
+      -webkit-font-smoothing: antialiased;
+    }
+    a { color: inherit; }
+    img { display: block; max-width: 100%; }
+    .wrap { width: min(1160px, calc(100% - 40px)); margin-inline: auto; }
+    .topline {
+      background: var(--dark); color: #f8f3e9; font-size: .76rem; letter-spacing: .11em;
+      text-transform: uppercase; text-align: center; padding: 9px 16px;
+    }
+    header {
+      position: sticky; top: 0; z-index: 20; background: rgba(251,247,238,.94);
+      backdrop-filter: blur(14px); border-bottom: 1px solid rgba(232,225,213,.88);
+    }
+    .nav { min-height: 82px; display: flex; align-items: center; justify-content: space-between; gap: 24px; }
+    .logo { width: 164px; flex: 0 0 auto; border-radius: 5px; mix-blend-mode: multiply; }
+    .nav-right { display: flex; align-items: center; gap: 20px; }
+    .nav-note { color: var(--muted); font-size: .88rem; }
+    .btn {
+      display: inline-flex; align-items: center; justify-content: center; gap: 9px;
+      min-height: 52px; padding: 13px 20px; border: 1px solid transparent; border-radius: 999px;
+      text-decoration: none; font-weight: 750; font-size: .95rem; text-align: center;
+      line-height: 1.2; transition: transform .15s ease, background .15s ease, box-shadow .15s ease;
+      cursor: pointer;
+    }
+    .btn:hover { transform: translateY(-1px); }
+    .btn:focus-visible, a:focus-visible, summary:focus-visible { outline: 3px solid #3f8fca; outline-offset: 3px; }
+    .btn-primary { background: var(--accent); color: #171814; box-shadow: 0 7px 0 rgba(214,168,70,.16); }
+    .btn-primary:hover { background: #f4d48d; }
+    .btn-whatsapp { background: var(--green); color: white; }
+    .btn-whatsapp:hover { background: var(--green-dark); }
+    .btn-quiet { background: transparent; border-color: #cbc5b9; color: var(--ink); }
+    .btn-quiet:hover { background: #fffdf8; }
+    .hero { padding: 62px 0 66px; }
+    .hero-grid { display: grid; grid-template-columns: .96fr 1.04fr; align-items: center; gap: clamp(36px, 6vw, 74px); }
+    .eyebrow {
+      display: inline-flex; align-items: center; gap: 9px; font-size: .78rem; font-weight: 800;
+      letter-spacing: .1em; text-transform: uppercase; color: #525a52; margin-bottom: 20px;
+    }
+    .eyebrow::before { content: ""; width: 25px; height: 3px; border-radius: 3px; background: var(--accent-deep); }
+    h1, h2, h3, p { margin-top: 0; }
+    h1 { font-size: clamp(2.6rem, 5.2vw, 4.7rem); letter-spacing: -.065em; line-height: .99; max-width: 620px; margin-bottom: 23px; }
+    h1 em { font-style: normal; text-decoration: underline; text-decoration-color: var(--accent); text-decoration-thickness: .14em; text-underline-offset: .09em; }
+    .hero-copy { font-size: clamp(1.02rem, 1.4vw, 1.14rem); color: #555e57; max-width: 520px; margin-bottom: 26px; }
+    .hero-buttons { display: flex; flex-wrap: wrap; gap: 11px; margin-bottom: 23px; }
+    .trust-line { display: flex; flex-wrap: wrap; gap: 9px 17px; color: #525b54; font-size: .85rem; }
+    .trust-line span { display: inline-flex; align-items: center; gap: 7px; }
+    .tick { display: inline-grid; place-items: center; width: 18px; height: 18px; border-radius: 50%; background: #e8eddf; color: #2f653f; font-size: .73rem; font-weight: 900; }
+    .hero-visual { min-width: 0; position: relative; }
+    .hero-photo { width: 100%; height: clamp(330px, 43vw, 505px); object-fit: cover; object-position: 53% 54%; border-radius: 27px; box-shadow: var(--shadow); }
+    .photo-label {
+      position: absolute; left: -20px; bottom: 24px; max-width: 245px; background: #fffdf8;
+      padding: 16px 18px; border-radius: 16px; box-shadow: 0 12px 35px rgba(22,26,21,.15);
+    }
+    .photo-label strong { display: block; font-size: .96rem; margin-bottom: 3px; }
+    .photo-label small { color: var(--muted); font-size: .79rem; }
+    .section { padding: 74px 0; }
+    .section-white { background: var(--white); }
+    .section-head { max-width: 670px; margin-bottom: 32px; }
+    .kicker { font-size: .76rem; font-weight: 800; letter-spacing: .12em; text-transform: uppercase; color: #737a70; margin-bottom: 11px; }
+    h2 { font-size: clamp(2rem, 3.6vw, 3.05rem); line-height: 1.05; letter-spacing: -.05em; margin-bottom: 14px; }
+    .section-intro { color: var(--muted); font-size: 1.02rem; max-width: 620px; margin-bottom: 0; }
+    .problem-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 13px; }
+    .problem-card { border: 1px solid var(--line); background: #fffdf9; border-radius: 17px; padding: 21px 19px; min-height: 165px; }
+    .card-number { display: block; font-size: .78rem; font-weight: 850; color: #91743c; letter-spacing: .08em; margin-bottom: 18px; }
+    .problem-card h3, .service-card h3 { font-size: 1.05rem; letter-spacing: -.025em; margin-bottom: 8px; line-height: 1.2; }
+    .problem-card p, .service-card p { margin: 0; color: var(--muted); font-size: .9rem; }
+    .section-grid { display: grid; grid-template-columns: .78fr 1.22fr; align-items: start; gap: 72px; }
+    .step-list { display: grid; gap: 12px; }
+    .step { display: grid; grid-template-columns: 44px 1fr; gap: 16px; padding: 20px 0; border-bottom: 1px solid var(--line); }
+    .step:last-child { border-bottom: 0; }
+    .step-icon { width: 42px; height: 42px; display: grid; place-items: center; border-radius: 13px; background: #f8edcf; font-size: 1rem; font-weight: 850; }
+    .step h3 { font-size: 1.08rem; margin-bottom: 4px; }
+    .step p { color: var(--muted); margin: 0; font-size: .93rem; }
+    .service-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 15px; }
+    .service-card { background: var(--paper); border: 1px solid var(--line); border-radius: 18px; padding: 25px 22px; }
+    .service-symbol { display: grid; place-items: center; width: 43px; height: 43px; background: #f4e7c8; border-radius: 13px; margin-bottom: 17px; font-size: 1.2rem; }
+    .benefit-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 34px; }
+    .benefit { border-top: 2px solid var(--accent-deep); padding-top: 19px; }
+    .benefit h3 { font-size: 1.1rem; margin-bottom: 7px; }
+    .benefit p { color: var(--muted); margin-bottom: 0; font-size: .94rem; }
+    .compare { border: 1px solid var(--line); border-radius: 18px; overflow: hidden; background: #fffdf9; }
+    .compare-row { display: grid; grid-template-columns: 1fr 1fr 1fr; }
+    .compare-row > div { padding: 15px 18px; border-bottom: 1px solid var(--line); font-size: .9rem; }
+    .compare-row:last-child > div { border-bottom: 0; }
+    .compare-head > div { font-weight: 800; background: #f1ebdd; }
+    .compare-row > div:first-child { color: #454d46; }
+    .compare-row > div:nth-child(2) { font-weight: 700; }
+    .compare-row > div:nth-child(3) { color: var(--muted); }
+    .early-card { padding: 30px; border-radius: 20px; background: #f2e8d3; display: flex; align-items: center; justify-content: space-between; gap: 25px; }
+    .early-card h2 { max-width: 600px; font-size: clamp(1.75rem, 3vw, 2.5rem); margin-bottom: 10px; }
+    .early-card p { color: #5c625a; margin-bottom: 0; max-width: 600px; }
+    .faq-list { border-top: 1px solid var(--line); }
+    details { border-bottom: 1px solid var(--line); }
+    summary { cursor: pointer; list-style: none; padding: 20px 38px 20px 0; font-weight: 750; position: relative; }
+    summary::-webkit-details-marker { display: none; }
+    summary::after { content: "+"; position: absolute; right: 3px; top: 13px; font-size: 1.5rem; font-weight: 450; color: #6d766d; }
+    details[open] summary::after { content: "−"; }
+    details p { color: var(--muted); max-width: 770px; padding: 0 38px 20px 0; margin: -3px 0 0; font-size: .95rem; }
+    .final-cta { background: var(--dark); color: #fffdf7; padding: 72px 0 76px; }
+    .final-grid { display: grid; grid-template-columns: 1.1fr .9fr; gap: 64px; align-items: center; }
+    .final-cta .kicker { color: #d9c79e; }
+    .final-cta h2 { max-width: 650px; font-size: clamp(2.3rem, 4vw, 3.6rem); }
+    .final-cta .final-copy { color: #d0d6ce; max-width: 560px; }
+    .contact-panel { background: #fffdf7; color: var(--ink); border-radius: 20px; padding: 24px; }
+    .contact-panel h3 { font-size: 1.14rem; margin-bottom: 14px; }
+    .contact-number { display: block; font-size: 1.27rem; font-weight: 850; letter-spacing: -.03em; text-decoration: none; padding: 7px 0; }
+    .contact-actions { display: grid; gap: 10px; margin-top: 15px; }
+    .policy { color: #b7c0b6; font-size: .82rem; margin: 18px 0 0; }
+    footer { background: #18201a; color: #bfc8bf; font-size: .81rem; padding: 20px 0 92px; }
+    .footer-row { display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 10px; }
+    footer a { color: #f8f4e8; text-decoration: none; }
+    .mobile-bar { display: none; }
+    @media (max-width: 900px) {
+      .hero { padding-top: 45px; }
+      .hero-grid { grid-template-columns: 1fr; gap: 31px; }
+      .hero-copy { max-width: 650px; }
+      .hero-visual { max-width: 700px; width: 100%; }
+      .hero-photo { height: clamp(300px, 62vw, 470px); }
+      .photo-label { left: 14px; }
+      .problem-grid { grid-template-columns: repeat(2, 1fr); }
+      .section-grid { grid-template-columns: 1fr; gap: 20px; }
+      .final-grid { grid-template-columns: 1fr; gap: 28px; }
+      .contact-panel { max-width: 550px; }
+    }
+    @media (max-width: 600px) {
+      .wrap { width: min(100% - 30px, 1160px); }
+      .topline { font-size: .65rem; letter-spacing: .07em; }
+      .nav { min-height: 70px; }
+      .logo { width: 126px; }
+      .nav-note { display: none; }
+      .nav-right { gap: 0; }
+      .nav .btn { min-height: 43px; padding: 10px 14px; font-size: .84rem; }
+      .hero { padding: 37px 0 50px; }
+      h1 { font-size: clamp(2.6rem, 12vw, 3.7rem); max-width: 480px; }
+      .hero-copy { font-size: 1rem; }
+      .hero-buttons { display: grid; grid-template-columns: 1fr; }
+      .hero-buttons .btn { width: 100%; }
+      .trust-line { display: grid; gap: 8px; }
+      .hero-photo { height: 285px; border-radius: 20px; object-position: 54% 54%; }
+      .photo-label { left: 10px; bottom: 12px; max-width: 222px; padding: 12px 14px; }
+      .section { padding: 54px 0; }
+      .problem-grid { gap: 10px; }
+      .problem-card { min-height: 0; padding: 16px 14px; }
+      .card-number { margin-bottom: 12px; }
+      .problem-card h3 { font-size: .96rem; }
+      .problem-card p { font-size: .84rem; }
+      .service-grid, .benefit-grid { grid-template-columns: 1fr; gap: 12px; }
+      .service-card { padding: 21px 18px; }
+      .benefit-grid { gap: 23px; }
+      .compare-row > div { padding: 12px 9px; font-size: .79rem; overflow-wrap: anywhere; }
+      .compare-row > div:first-child { font-size: .77rem; }
+      .early-card { display: block; padding: 24px 20px; }
+      .early-card .btn { margin-top: 18px; width: 100%; }
+      .final-cta { padding: 54px 0 58px; }
+      .contact-panel { padding: 20px; }
+      .mobile-bar {
+        position: fixed; z-index: 30; bottom: 0; left: 0; right: 0; display: grid;
+        grid-template-columns: .85fr 1.15fr; gap: 9px; padding: 10px 12px calc(10px + env(safe-area-inset-bottom));
+        background: rgba(251,247,238,.97); border-top: 1px solid var(--line); box-shadow: 0 -8px 22px rgba(24,32,26,.08);
+        backdrop-filter: blur(12px);
+      }
+      .mobile-bar .btn { min-height: 48px; padding: 11px 10px; font-size: .88rem; }
+      footer { padding-bottom: 100px; }
+    }
+    @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } *, *::before, *::after { transition: none !important; } }
+  </style>
+</head>
+<body>
+  <div class="topline">Transport for ceramic sourcing visits · Morbi, Gujarat</div>
+  <header>
+    <div class="wrap nav">
+      <a href="#top" aria-label="Shyam Cabs home"><img class="logo" src="assets/shyam-cabs-logo-wide.jpg" alt="Shyam Cabs logo"></a>
+      <div class="nav-right">
+        <span class="nav-note">Airport transfer · Local travel · Full-day trips</span>
+        <a class="btn btn-primary" href="tel:+919429276756">Call to book <span aria-hidden="true">↗</span></a>
+      </div>
+    </div>
+  </header>
+
+  <main id="top">
+    <section class="hero">
+      <div class="wrap hero-grid">
+        <div class="hero-copy-wrap">
+          <div class="eyebrow">Travel planned around your visit</div>
+          <h1>Your Morbi sourcing trip, <em>without the travel stress.</em></h1>
+          <p class="hero-copy">For buyers, builders and international clients visiting ceramic manufacturers and showrooms. Arrange airport transfers, local car rental or a full-day trip with Shyam Cabs.</p>
+          <div class="hero-buttons">
+            <a class="btn btn-primary" href="https://wa.me/919429276756?text=Hello%20Shyam%20Cabs%2C%20I%20want%20to%20plan%20a%20Morbi%20ceramic%20sourcing%20trip." target="_blank" rel="noopener">I want to book my ride <span aria-hidden="true">↗</span></a>
+            <a class="btn btn-quiet" href="tel:+919429276756">Call 94292 76756</a>
+          </div>
+          <div class="trust-line" aria-label="Booking information">
+            <span><b class="tick" aria-hidden="true">✓</b> Discuss fare before confirming</span>
+            <span><b class="tick" aria-hidden="true">✓</b> Plan pickup details in advance</span>
+            <span><b class="tick" aria-hidden="true">✓</b> Book direct by call or WhatsApp</span>
+          </div>
+        </div>
+        <div class="hero-visual">
+          <img class="hero-photo" src="assets/car-tour-s.jpg" alt="White Maruti Suzuki Tour S sedan ready for a business trip">
+          <div class="photo-label"><strong>More time for your business</strong><small>Airport pickup · Showroom visits · Factory stops</small></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section-white" id="challenges">
+      <div class="wrap">
+        <div class="section-head">
+          <div class="kicker">A smoother visit starts here</div>
+          <h2>Your business visit matters. Transport should not add stress.</h2>
+          <p class="section-intro">When every meeting counts, small travel problems can take time away from finding the right products and suppliers.</p>
+        </div>
+        <div class="problem-grid">
+          <article class="problem-card"><span class="card-number">01 / COMFORT</span><h3>Unclean car</h3><p>A poor first impression when travelling with buyers or business partners.</p></article>
+          <article class="problem-card"><span class="card-number">02 / TIMING</span><h3>Late pickup</h3><p>A delay can affect showroom visits, factory tours and meetings.</p></article>
+          <article class="problem-card"><span class="card-number">03 / COST</span><h3>Unclear fare</h3><p>Different expectations can lead to confusion at the end of a trip.</p></article>
+          <article class="problem-card"><span class="card-number">04 / PLANNING</span><h3>Too many stops</h3><p>Arranging each ride separately can take time out of your day.</p></article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="how-it-works">
+      <div class="wrap section-grid">
+        <div>
+          <div class="kicker">Simple from the start</div>
+          <h2>One trip plan. Fewer travel questions.</h2>
+          <p class="section-intro">Share your schedule, discuss the details, and confirm the plan before you travel.</p>
+          <p style="margin-top:24px"><a class="btn btn-whatsapp" href="https://wa.me/919429276756?text=Hello%20Shyam%20Cabs%2C%20please%20help%20me%20plan%20travel%20in%20Morbi." target="_blank" rel="noopener">I want to plan my trip <span aria-hidden="true">↗</span></a></p>
+        </div>
+        <div class="step-list">
+          <article class="step"><span class="step-icon" aria-hidden="true">1</span><div><h3>Share your travel details</h3><p>Send your date, airport or pickup point, number of passengers and planned destinations.</p></div></article>
+          <article class="step"><span class="step-icon" aria-hidden="true">2</span><div><h3>Review the trip and fare</h3><p>Discuss the vehicle, pickup time, route, waiting time, extra hours and applicable charges.</p></div></article>
+          <article class="step"><span class="step-icon" aria-hidden="true">3</span><div><h3>Confirm your booking</h3><p>Once the details are agreed and availability is confirmed, keep your phone ready for pickup coordination.</p></div></article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section-white" id="services">
+      <div class="wrap">
+        <div class="section-head">
+          <div class="kicker">Choose the trip you need</div>
+          <h2>Travel that fits your sourcing plan.</h2>
+          <p class="section-intro">Tell us what your visit looks like. We will discuss the suitable option and fare with you.</p>
+        </div>
+        <div class="service-grid">
+          <article class="service-card"><div class="service-symbol" aria-hidden="true">✈</div><h3>Airport transfers</h3><p>Share your arrival airport, landing time, destination and passenger details to plan pickup or drop-off.</p></article>
+          <article class="service-card"><div class="service-symbol" aria-hidden="true">⌖</div><h3>Full-day sourcing trip</h3><p>Discuss a planned route between ceramic factories, showrooms, hotels and meetings.</p></article>
+          <article class="service-card"><div class="service-symbol" aria-hidden="true">↗</div><h3>Local car rental</h3><p>Ask about transport for local appointments and travel between business stops.</p></article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="benefits">
+      <div class="wrap">
+        <div class="section-head">
+          <div class="kicker">Why plan with Shyam Cabs</div>
+          <h2>Keep your focus on finding the right deals.</h2>
+        </div>
+        <div class="benefit-grid">
+          <article class="benefit"><h3>Use your time better</h3><p>Plan pickup and destinations around supplier meetings instead of arranging every ride separately.</p></article>
+          <article class="benefit"><h3>Know the trip terms</h3><p>Discuss the fare, waiting time, additional stops and extra-hour charges before you confirm.</p></article>
+          <article class="benefit"><h3>Set clear expectations</h3><p>Request a clean vehicle and confirm pickup details in advance for a more prepared journey.</p></article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section-white" id="compare">
+      <div class="wrap">
+        <div class="section-head">
+          <div class="kicker">Plan instead of guessing</div>
+          <h2>Clear details make a better start.</h2>
+          <p class="section-intro">Compare a planned booking with arranging transport only after you arrive.</p>
+        </div>
+        <div class="compare" role="table" aria-label="Planned Shyam Cabs booking compared with last-minute transport">
+          <div class="compare-row compare-head" role="row"><div role="columnheader">What matters</div><div role="columnheader">Shyam Cabs</div><div role="columnheader">Last-minute plan</div></div>
+          <div class="compare-row" role="row"><div role="cell">Pickup</div><div role="cell">Discuss time and location first</div><div role="cell">Arrange after arrival</div></div>
+          <div class="compare-row" role="row"><div role="cell">Fare</div><div role="cell">Discuss trip terms in advance</div><div role="cell">May need more clarification</div></div>
+          <div class="compare-row" role="row"><div role="cell">Multiple stops</div><div role="cell">Share your itinerary ahead</div><div role="cell">Coordinate as you go</div></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="plan-ahead">
+      <div class="wrap">
+        <div class="early-card">
+          <div><div class="kicker">Before you arrive</div><h2>Your supplier meetings have a schedule. Plan your ride early.</h2><p>Send your travel dates and main destinations so availability, route and fare can be discussed before your Morbi visit.</p></div>
+          <a class="btn btn-primary" href="https://wa.me/919429276756?text=Hello%20Shyam%20Cabs%2C%20I%20want%20to%20check%20availability%20for%20a%20Morbi%20visit." target="_blank" rel="noopener">I want to check availability <span aria-hidden="true">↗</span></a>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section-white" id="faq">
+      <div class="wrap section-grid">
+        <div><div class="kicker">Questions, answered</div><h2>Good to know before you book.</h2><p class="section-intro">Share your requirements first. Final availability and trip terms are confirmed directly with Shyam Cabs.</p></div>
+        <div class="faq-list">
+          <details><summary>What details are needed for an airport pickup?</summary><p>Share your travel date, airport, flight arrival time, destination, passenger count and luggage details. Confirm the pickup arrangement directly with us.</p></details>
+          <details><summary>Can I book a full day for ceramic sourcing?</summary><p>Send your planned factories, showrooms and expected travel hours. We will discuss the route, availability and fare.</p></details>
+          <details><summary>How can I avoid fare disputes?</summary><p>Ask for the agreed fare and what it includes. Clarify waiting time, extra hours, added stops, tolls, parking and any other applicable charges before confirming.</p></details>
+          <details><summary>Can international buyers contact you?</summary><p>Yes, you can enquire directly by phone or WhatsApp. Share arrival details, destinations and any communication needs so the arrangements can be discussed.</p></details>
+          <details><summary>What if my flight or meeting time changes?</summary><p>Contact us as soon as you know. Changes depend on availability and the updated trip plan, so please confirm any adjustment directly.</p></details>
+        </div>
+      </div>
+    </section>
+
+    <section class="final-cta" id="book">
+      <div class="wrap final-grid">
+        <div>
+          <div class="kicker">Your Morbi visit starts with a plan</div>
+          <h2>Focus on business. Let’s discuss your ride.</h2>
+          <p class="final-copy">Tell us where you are arriving, when you need pickup and where you plan to go. We will discuss available travel options and the fare before you confirm.</p>
+          <p class="policy">Booking policy: Your trip is confirmed only after availability and the final trip details and fare are agreed.</p>
+        </div>
+        <div class="contact-panel">
+          <h3>Contact Shyam Cabs</h3>
+          <a class="contact-number" href="tel:+919429276756">9429276756</a>
+          <a class="contact-number" href="tel:+919825176756">9825176756</a>
+          <div class="contact-actions">
+            <a class="btn btn-whatsapp" href="https://wa.me/919429276756?text=Hello%20Shyam%20Cabs%2C%20I%20want%20to%20book%20a%20ride%20for%20Morbi." target="_blank" rel="noopener">I want to book on WhatsApp <span aria-hidden="true">↗</span></a>
+            <a class="btn btn-quiet" href="tel:+919429276756">I want to call</a>
+          </div>
+          <p style="color:#697168;font-size:.8rem;margin:14px 0 0">For a faster quote, include date, pickup point, passenger count and destinations in your message.</p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="wrap footer-row"><span>© <span id="year">2026</span> Shyam Cabs. Travel in and around Morbi, Gujarat.</span><span><a href="tel:+919429276756">Call us</a> · <a href="https://wa.me/919429276756" target="_blank" rel="noopener">WhatsApp</a></span></div>
+  </footer>
+
+  <div class="mobile-bar" aria-label="Quick booking actions">
+    <a class="btn btn-quiet" href="tel:+919429276756">Call Shyam Cabs</a>
+    <a class="btn btn-whatsapp" href="https://wa.me/919429276756?text=Hello%20Shyam%20Cabs%2C%20I%20want%20to%20book%20a%20ride%20for%20Morbi." target="_blank" rel="noopener">Book on WhatsApp ↗</a>
+  </div>
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
